@@ -1,4 +1,6 @@
 // @flow
+import 'proxy-polyfill';
+
 type ProxyTraps<T> = Proxy$traps<T>;
 
 const trapWrapper = <F: $Values<ProxyTraps<any>>>(fn: F, context: {}): F =>

@@ -1,6 +1,6 @@
 {
   "name": "context-proxy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "JS Proxy with context.",
   "main": "lib/index.js",
   "author": "Adam Makświej <adam.makswiej@gmail.com>",
@@ -26,12 +26,15 @@
     "jest": "^22.0.4"
   },
   "scripts": {
-    "build:flow": "flow gen-flow-files src/index.js",
+    "build:flow": "flow gen-flow-files src/index.js --out-dir lib",
     "build:src": "babel src --out-dir lib -s",
-    "build": "yarn build:src",
+    "build": "yarn lint && yarn build:src && yarn build:flow",
     "lint": "eslint src --ext .js --ext .jsx --cache",
     "lint:fix": "eslint src --ext .js --ext .jsx --cache --fix",
     "test": "jest",
     "test:cover": "jest --coverage"
+  },
+  "dependencies": {
+    "proxy-polyfill": "^0.1.7"
   }
 }
