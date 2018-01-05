@@ -1,5 +1,5 @@
 // @flow
-import 'proxy-polyfill';
+require('proxy-polyfill');
 
 type ProxyTraps<T> = Proxy$traps<T>;
 
