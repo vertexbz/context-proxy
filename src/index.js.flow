@@ -1,0 +1,8 @@
+// @flow
+
+type ProxyTraps<T> = Proxy$traps<T>;
+
+declare export function contextProxy<S: {}>(target: S, traps: ProxyTraps<S>, context: {}): S;
+
+declare export default <S: {}>(target: S, traps: ProxyTraps<S>, context: {}) => S;
+
